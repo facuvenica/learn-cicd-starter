@@ -13,7 +13,7 @@ func TestGetAPIKey(t *testing.T) {
 	}{
 		"empty":      {input: "", want: []string{"", "no authorization header included"}},
 		"correct":    {input: "ApiKey TestingKey", want: []string{"TestingKey", ""}},
-		"no keyword": {input: "TestingKey", want: []string{"a", "malformed authorization header"}},
+		"no keyword": {input: "TestingKey", want: []string{"", "malformed authorization header"}},
 		"no apikey":  {input: "ApiKey", want: []string{"", "malformed authorization header"}},
 	}
 
